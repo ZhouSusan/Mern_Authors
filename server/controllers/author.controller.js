@@ -21,7 +21,7 @@ module.exports = {
     },
 
     getAllAuthors: (req, res) => {
-        Author.find()
+        Author.find().sort({ name: 'asc', test: -1 })
             .then((allAuthors) => {
                 console.log(allAuthors);
                 res.json(allAuthors);
