@@ -20,7 +20,6 @@ const Update = (props) => {
 
     const updateAuthor = e => {
         e.preventDefault();
-        //Send a post request to our API to create a Book
         axios.put('http://localhost:8000/api/authors/' + id, {
             name
         })
@@ -30,12 +29,11 @@ const Update = (props) => {
             }) 
             .catch(err=>{
                 console.log(err);
-                const errorResponse = err.response.data.errors; // Get the errors from err.response.data
-                const errorArr = []; // Define a temp error array to push the messages in
-                for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
+                const errorResponse = err.response.data.errors; 
+                const errorArr = []; 
+                for (const key of Object.keys(errorResponse)) { 
                     errorArr.push(errorResponse[key].message)
                 }
-                // Set Errors
                 setErrors(errorArr);
             })            
     }

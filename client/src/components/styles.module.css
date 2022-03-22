@@ -13,6 +13,11 @@
     font-size: larger;
 }
 
+.errorMsg {
+	color: "red";
+	font-size: larger;
+}
+
 .editButton {
 	background-color: #eaf1dd;
 	color: rgb(115, 124, 128);

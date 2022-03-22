@@ -41,7 +41,7 @@ const AuthorForm = (props) => {
                     <input type="text" onChange={(e) => setName(e.target.value)} value={name}/>
                     {
                         errors.map((error) => {
-                            return <div style={{color: "red"}}>{error}</div>
+                            return <div className={styles.errorMsg}>{error}</div>
                         })
                     }
                 </p>
