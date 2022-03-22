@@ -1,9 +1,7 @@
-// React and both useState useEffect
 import React, { useState } from 'react';
-// axios to make api call
 import axios from 'axios'
-// use History to back to all author page
 import { useHistory, Link } from 'react-router-dom';
+import styles from './styles.module.css';
 
 
 const AuthorForm = (props) => {
@@ -36,10 +34,10 @@ const AuthorForm = (props) => {
     return (
         <div>
             <a href="/">Home</a>
-            <h3>Add a new Author</h3>
+            <h3 className={styles.colorText}>Add a new Author</h3>
             <form onSubmit={handleSubmit}>
                 <p>
-                    <label>Name:</label>
+                    <label className={styles.input}>Name:</label>
                     <input type="text" onChange={(e) => setName(e.target.value)} value={name}/>
                     {
                         errors.map((error) => {
@@ -48,7 +46,7 @@ const AuthorForm = (props) => {
                     }
                 </p>
                 <Link to="/">Cancel</Link>
-                <input className="btn" type="submit" value="submit" />
+                <button className={styles.btn} type="submit">Submit</button>
             </form>
         </div>
     );

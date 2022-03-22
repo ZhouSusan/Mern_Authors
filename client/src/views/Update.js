@@ -43,10 +43,10 @@ const Update = (props) => {
     return (
         <div>
             <Link to="/">Home</Link>
-            <h3>Edit this author: </h3>
+            <h3 style={{color: "purple", marginBottom: 5}}>Edit this author: </h3>
             <form onSubmit={updateAuthor}>
                 <p>
-                    <label>Name:</label>
+                    <label style={{marginRight: 15}}>Name:</label>
                     <input type="text" onChange={(e) => setName(e.target.value)} value={name}/>
                     {
                         errors.map((error) => {
@@ -55,7 +55,7 @@ const Update = (props) => {
                     }
                 </p>
                 <Link to="/">Cancel</Link>
-                <input className="btn" type="submit" value="submit" />
+                <button style={{marginLeft: 15}} type="submit">Submit</button>
             </form>
         </div>
     );
